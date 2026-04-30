@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us – The ABC Success Lab{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb-nav mb-3">
+      <a href="{% url 'core:home' %}">Home</a>
+      <span class="sep">/</span>
+      <span>Contact</span>
+    </nav>
+    <h1 class="hero-title" style="font-size:clamp(2rem,4vw,3rem);">Get in Touch</h1>
+    <p style="color:rgba(255,255,255,.7);max-width:520px;font-size:1.05rem;margin-top:12px;">
+      Have a question about our programmes? Ready to register? We'd love to hear from you.
+    </p>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="row g-5 align-items-start">
+
+      <!-- Contact Info -->
+      <div class="col-lg-5">
+        <div class="contact-info-card">
+          <p class="section-label" style="color:var(--gold);">Contact Details</p>
+          <h3 style="color:var(--white);margin-bottom:30px;">We're Here to Help</h3>
+
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="bi bi-telephone"></i></div>
+            <div>
+              <div style="font-size:.8rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">Phone</div>
+              <a href="tel:+2348101537642" style="color:var(--white);font-size:1rem;">08101537642</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="bi bi-whatsapp"></i></div>
+            <div>
+              <div style="font-size:.8rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">WhatsApp</div>
+              <a href="https://wa.me/2348101537642" target="_blank" rel="noopener" style="color:var(--white);font-size:1rem;">08101537642</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="bi bi-envelope"></i></div>
+            <div>
+              <div style="font-size:.8rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">Email</div>
+              <a href="mailto:ABCSuccessLab@gmail.com" style="color:var(--white);font-size:1rem;">ABCSuccessLab@gmail.com</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon"><i class="bi bi-geo-alt"></i></div>
+            <div>
+              <div style="font-size:.8rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;">Address</div>
+              <p style="color:var(--white);font-size:.95rem;margin:0;line-height:1.6;">
+                15, Kola Adesina Close,<br>
+                Egbin Power Plc Estate,<br>
+                Ijede, Lagos State, Nigeria
+              </p>
+            </div>
+          </div>
+
+          <div style="border-top:1px solid rgba(255,255,255,.1);padding-top:24px;margin-top:8px;">
+            <div style="font-size:.8rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px;">Follow Us</div>
+            <div class="social-links">
+              <a href="#" class="social-link"><i class="bi bi-whatsapp"></i></a>
+              <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+              <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interest Form CTA + Quick Message -->
+      <div class="col-lg-7">
+        <p class="section-label">Register Your Interest</p>
+        <h2 class="section-title" style="margin-bottom:16px;">Take the First Step</h2>
+        <p style="color:var(--gray-600);margin-bottom:32px;font-size:1rem;">
+          Click below to fill in our interest/registration form and we'll follow up with programme
+          details, fees, and available schedules tailored to you.
+        </p>
+
+        <a href="#" target="_blank" rel="noopener" class="btn-gold d-inline-flex align-items-center gap-2 mb-5" style="font-size:1.05rem;padding:16px 36px;">
+          <i class="bi bi-pencil-square"></i> Fill Interest Form
+        </a>
+
+        <div style="background:var(--off-white);border-radius:14px;padding:36px;" class="mt-2">
+          <h4 style="color:var(--navy);margin-bottom:6px;">Prefer to send a direct message?</h4>
+          <p style="color:var(--gray-600);font-size:.92rem;margin-bottom:24px;">
+            Reach us on WhatsApp for a faster response – typically within a few hours during business days.
+          </p>
+          <a href="https://wa.me/2348101537642?text=Hello%2C%20I%20am%20interested%20in%20the%20ABC%20Success%20Lab%20training%20programmes.%20Please%20send%20me%20more%20details."
+             target="_blank" rel="noopener"
+             class="btn-gold d-inline-flex align-items-center gap-2">
+            <i class="bi bi-whatsapp"></i> Open WhatsApp Chat
+          </a>
+
+          <div class="mt-4 pt-4" style="border-top:1px solid #e8e4de;">
+            <p style="font-size:.85rem;color:var(--gray-400);margin:0;">
+              <i class="bi bi-clock me-1"></i>
+              Business hours: Monday – Saturday, 8am – 6pm (WAT)
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock %}

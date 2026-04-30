@@ -1,0 +1,5 @@
+Django>=4.2,<5.0
+whitenoise[brotli]>=6.6
+gunicorn>=21.2
+python-decouple>=3.8
+Pillow>=10.0

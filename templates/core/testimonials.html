@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Testimonials – The ABC Success Lab{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb-nav mb-3">
+      <a href="{% url 'core:home' %}">Home</a>
+      <span class="sep">/</span>
+      <span>Testimonials</span>
+    </nav>
+    <h1 class="hero-title" style="font-size:clamp(2rem,4vw,3rem);">What Participants Say</h1>
+    <p style="color:rgba(255,255,255,.7);max-width:520px;font-size:1.05rem;margin-top:12px;">
+      Real feedback from real professionals who have trained with us.
+    </p>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+    {% if testimonials %}
+    <div class="row g-4">
+      {% for t in testimonials %}
+      <div class="col-md-6 col-lg-4" data-reveal>
+        <div class="testimonial-card">
+          <p style="color:var(--gray-600);font-size:.93rem;margin-top:30px;margin-bottom:24px;">{{ t.message }}</p>
+          <div class="d-flex align-items-center gap-3">
+            <div class="testimonial-avatar">
+              {% if t.photo %}<img src="{{ t.photo.url }}" alt="{{ t.name }}">
+              {% else %}{{ t.name|first }}{% endif %}
+            </div>
+            <div>
+              <strong style="color:var(--navy);font-size:.92rem;">{{ t.name }}</strong>
+              {% if t.title %}<div style="font-size:.8rem;color:var(--gray-400);">{{ t.title }}</div>{% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <!-- Placeholders – replace via Django Admin > Testimonials -->
+    <div class="row g-4">
+      {% for item in placeholder_testimonials %}
+      <div class="col-md-6 col-lg-4" data-reveal>
+        <div class="testimonial-card">
+          <p style="color:var(--gray-600);font-size:.93rem;margin-top:30px;margin-bottom:24px;">{{ item.message }}</p>
+          <div class="d-flex align-items-center gap-3">
+            <div class="testimonial-avatar">{{ item.initials }}</div>
+            <div>
+              <strong style="color:var(--navy);font-size:.92rem;">{{ item.name }}</strong>
+              <div style="font-size:.8rem;color:var(--gray-400);">{{ item.title }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% empty %}
+      <div class="col-12 text-center py-5">
+        <i class="bi bi-chat-quote fs-1 text-gold d-block mb-3"></i>
+        <p style="color:var(--gray-600);">Testimonials will appear here once added via the admin panel.</p>
+        <a href="/admin/core/testimonial/add/" class="btn-gold mt-3 d-inline-block">Add First Testimonial</a>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<section class="cta-banner section-pad">
+  <div class="container text-center position-relative" style="z-index:1;">
+    <h2 class="section-title light mb-3">Be Our Next Success Story</h2>
+    <a href="#" target="_blank" rel="noopener" class="btn-gold">
+      <i class="bi bi-pencil-square me-2"></i>Register Interest
+    </a>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us – The ABC Success Lab{% endblock %}
+{% block meta_desc %}Learn about The ABC Success Lab's mission, vision, values, and the team behind Nigeria's corporate readiness training organisation.{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb-nav mb-3">
+      <a href="{% url 'core:home' %}">Home</a>
+      <span class="sep">/</span>
+      <span>About Us</span>
+    </nav>
+    <h1 class="hero-title" style="font-size:clamp(2rem,4vw,3rem);">About ABC Success Lab</h1>
+    <p style="color:rgba(255,255,255,.7);max-width:560px;font-size:1.05rem;margin-top:12px;">
+      A registered professional training and coaching organisation dedicated to workplace readiness.
+    </p>
+  </div>
+</section>
+
+<!-- ── Overview ──────────────────────────────────────── -->
+<section class="section-pad">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6" data-reveal>
+        <p class="section-label">Company Overview</p>
+        <h2 class="section-title">Bridging the Gap Between Classroom and Career</h2>
+        <p style="color:var(--gray-600);margin-top:20px;line-height:1.8;">
+          The ABC Success Lab is a professional training and coaching organisation dedicated to preparing
+          individuals for success in the corporate environment. We bridge the gap between academic knowledge
+          and workplace expectations by equipping participants with practical, in-demand skills required
+          to thrive in today's dynamic business world.
+        </p>
+        <p style="color:var(--gray-600);margin-top:16px;line-height:1.8;">
+          Our programmes are designed to build competence, confidence, and professionalism, enabling
+          individuals to transition seamlessly into corporate roles and perform effectively from day one.
+        </p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <div class="px-4 py-3 rounded-3" style="background:var(--off-white);border-left:4px solid var(--gold);">
+            <strong style="color:var(--navy);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;">CAC Reg No.</strong>
+            <div style="color:var(--gray-600);font-size:.95rem;margin-top:4px;">9504456</div>
+          </div>
+          <div class="px-4 py-3 rounded-3" style="background:var(--off-white);border-left:4px solid var(--gold);">
+            <strong style="color:var(--navy);font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;">TIN</strong>
+            <div style="color:var(--gray-600);font-size:.95rem;margin-top:4px;">2622421166322</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6" data-reveal>
+        <div class="p-5 rounded-3" style="background:var(--navy);">
+          <div class="mb-4 pb-4" style="border-bottom:1px solid rgba(255,255,255,.1);">
+            <p class="section-label" style="color:var(--gold);">Vision</p>
+            <p style="color:rgba(255,255,255,.85);font-size:1.05rem;line-height:1.75;">
+              To become a leading platform that transforms individuals into confident, competent, and
+              corporate-ready professionals who excel in any work environment.
+            </p>
+          </div>
+          <div>
+            <p class="section-label" style="color:var(--gold);">Mission</p>
+            <p style="color:rgba(255,255,255,.85);font-size:1.05rem;line-height:1.75;">
+              To equip individuals with the mindset, skills, and professional behaviours required to
+              successfully integrate, grow, and excel in the corporate world through practical coaching
+              and structured learning.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Core Values ───────────────────────────────────── -->
+<section class="section-pad bg-off-white">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">What We Stand For</p>
+      <h2 class="section-title">Our Core Values</h2>
+    </div>
+    <div class="row g-4 justify-content-center">
+      <div class="col-6 col-md-4 col-lg-2" data-reveal>
+        <div class="text-center p-4 rounded-3 h-100 service-card">
+          <i class="bi bi-award fs-2 text-gold d-block mb-3"></i>
+          <strong style="color:var(--navy);">Excellence</strong>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-reveal>
+        <div class="text-center p-4 rounded-3 h-100 service-card">
+          <i class="bi bi-shield-check fs-2 text-gold d-block mb-3"></i>
+          <strong style="color:var(--navy);">Integrity</strong>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-reveal>
+        <div class="text-center p-4 rounded-3 h-100 service-card">
+          <i class="bi bi-briefcase fs-2 text-gold d-block mb-3"></i>
+          <strong style="color:var(--navy);">Professionalism</strong>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-reveal>
+        <div class="text-center p-4 rounded-3 h-100 service-card">
+          <i class="bi bi-graph-up-arrow fs-2 text-gold d-block mb-3"></i>
+          <strong style="color:var(--navy);">Growth</strong>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-reveal>
+        <div class="text-center p-4 rounded-3 h-100 service-card">
+          <i class="bi bi-lightning fs-2 text-gold d-block mb-3"></i>
+          <strong style="color:var(--navy);">Empowerment</strong>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-reveal>
+        <div class="text-center p-4 rounded-3 h-100 service-card">
+          <i class="bi bi-tools fs-2 text-gold d-block mb-3"></i>
+          <strong style="color:var(--navy);">Practicality</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Delivery Methods ───────────────────────────────── -->
+<section class="section-pad">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">How We Deliver</p>
+      <h2 class="section-title">Flexible Delivery Methods</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3" data-reveal>
+        <div class="service-card text-center">
+          <div class="service-icon mx-auto"><i class="bi bi-camera-video"></i></div>
+          <h5>Virtual Learning</h5>
+          <p>Live online sessions accessible from anywhere in Nigeria and beyond.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3" data-reveal>
+        <div class="service-card text-center">
+          <div class="service-icon mx-auto"><i class="bi bi-people"></i></div>
+          <h5>Workshops & Seminars</h5>
+          <p>Intensive group sessions focused on specific skills and workplace themes.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3" data-reveal>
+        <div class="service-card text-center">
+          <div class="service-icon mx-auto"><i class="bi bi-building"></i></div>
+          <h5>Corporate In-House</h5>
+          <p>Customised on-site training delivered directly to your organisation's team.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3" data-reveal>
+        <div class="service-card text-center">
+          <div class="service-icon mx-auto"><i class="bi bi-person-lines-fill"></i></div>
+          <h5>One-on-One Coaching</h5>
+          <p>Personalised sessions tailored to individual goals, pace, and challenges.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ───────────────────────────────────────────── -->
+<section class="cta-banner section-pad">
+  <div class="container text-center position-relative" style="z-index:1;">
+    <h2 class="section-title light mb-3">Ready to Become Corporate-Ready?</h2>
+    <p style="color:rgba(255,255,255,.7);max-width:480px;margin:0 auto 32px;font-size:1rem;">
+      Fill in our interest form and our team will get back to you with a programme that fits your goals.
+    </p>
+    <a href="#" target="_blank" rel="noopener" class="btn-gold">
+      <i class="bi bi-pencil-square me-2"></i>Register Your Interest
+    </a>
+  </div>
+</section>
+
+{% endblock %}

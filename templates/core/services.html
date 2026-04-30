@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Our Training Programs – The ABC Success Lab{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb-nav mb-3">
+      <a href="{% url 'core:home' %}">Home</a>
+      <span class="sep">/</span>
+      <span>Services</span>
+    </nav>
+    <h1 class="hero-title" style="font-size:clamp(2rem,4vw,3rem);">Our Training Programs</h1>
+    <p style="color:rgba(255,255,255,.7);max-width:560px;font-size:1.05rem;margin-top:12px;">
+      Practical, industry-relevant programmes designed around real workplace expectations.
+    </p>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+
+    {% if services %}
+    <div class="row g-4">
+      {% for service in services %}
+      <div class="col-sm-6 col-lg-4" data-reveal>
+        <div class="service-card">
+          <div class="service-icon"><i class="bi {{ service.icon }}"></i></div>
+          <h5>{{ service.title }}</h5>
+          <p>{{ service.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% else %}
+    <!-- Default services when none added in admin yet -->
+    <div class="row g-4">
+
+      <div class="col-sm-6 col-lg-4" data-reveal>
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-laptop"></i></div>
+          <h5>Microsoft Office Training</h5>
+          <p>In-depth training on Excel, Word, PowerPoint and Outlook — the essential toolkit for every corporate professional.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-reveal>
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-chat-dots"></i></div>
+          <h5>Business Communication & Professional Writing</h5>
+          <p>Sharpen your written and verbal communication to meet the standards expected in boardrooms and inboxes.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-reveal>
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-bar-chart"></i></div>
+          <h5>Budgeting & Budget Reporting</h5>
+          <p>Understand how budgets are built, tracked, and reported — a core skill across all functional roles.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-reveal>
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-calculator"></i></div>
+          <h5>Basic Accounting & Financial Reporting</h5>
+          <p>Foundational accounting principles and financial reporting skills for non-accountants and entry-level finance staff.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-reveal>
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-cpu"></i></div>
+          <h5>Foundational AI for the Workplace</h5>
+          <p>Understand and apply AI tools that are reshaping how professionals work — productivity, writing, data, and more.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-reveal>
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-graph-up"></i></div>
+          <h5>Data Handling & Basic Analysis</h5>
+          <p>Organise, interpret, and present data confidently using spreadsheet tools and simple analytical techniques.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-reveal>
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-briefcase"></i></div>
+          <h5>Corporate Readiness & Workplace Orientation</h5>
+          <p>Professional etiquette, workplace culture, office politics navigation, and first-90-days survival strategies.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-reveal>
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-journal-text"></i></div>
+          <h5>Career Development & Employability</h5>
+          <p>CV writing, interview preparation, LinkedIn optimisation, and career-path planning for the modern job market.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-reveal>
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-building"></i></div>
+          <h5>Corporate Training & Staff Onboarding</h5>
+          <p>Bespoke in-house programmes designed for organisations that want their new hires productive from week one.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-reveal>
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-cash-coin"></i></div>
+          <h5>Tax Training & Consultation</h5>
+          <p>Personal and small business tax obligations explained clearly — compliance without confusion.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-reveal>
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-person-lines-fill"></i></div>
+          <h5>Personalised Coaching & Mentorship</h5>
+          <p>One-on-one sessions tailored to your specific challenges, career goals, and professional development needs.</p>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-4" data-reveal>
+        <div class="service-card">
+          <div class="service-icon"><i class="bi bi-book"></i></div>
+          <h5>School Financial Reporting Systems</h5>
+          <p>Covering bursar to accountant functions — financial management built for school owners and education administrators.</p>
+        </div>
+      </div>
+
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+
+<!-- ── CTA ───────────────────────────────────────────── -->
+<section class="cta-banner section-pad">
+  <div class="container text-center position-relative" style="z-index:1;">
+    <h2 class="section-title light mb-3">Interested in a Programme?</h2>
+    <p style="color:rgba(255,255,255,.7);max-width:480px;margin:0 auto 32px;font-size:1rem;">
+      Fill in the interest form and we'll match you with the right programme and schedule.
+    </p>
+    <div class="d-flex flex-wrap gap-3 justify-content-center">
+      <a href="#" target="_blank" rel="noopener" class="btn-gold">
+        <i class="bi bi-pencil-square me-2"></i>Fill Interest Form
+      </a>
+      <a href="https://wa.me/2348101537642" target="_blank" rel="noopener" class="btn-outline-white">
+        <i class="bi bi-whatsapp me-2"></i>WhatsApp Us
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

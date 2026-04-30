@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}FAQs – The ABC Success Lab{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb-nav mb-3">
+      <a href="{% url 'core:home' %}">Home</a>
+      <span class="sep">/</span>
+      <span>FAQs</span>
+    </nav>
+    <h1 class="hero-title" style="font-size:clamp(2rem,4vw,3rem);">Frequently Asked Questions</h1>
+    <p style="color:rgba(255,255,255,.7);max-width:520px;font-size:1.05rem;margin-top:12px;">
+      Answers to the questions we hear most often.
+    </p>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        {% if faqs %}
+          {% for faq in faqs %}
+          <div class="faq-item">
+            <button class="faq-question">
+              {{ faq.question }}
+              <i class="bi bi-chevron-down faq-chevron"></i>
+            </button>
+            <div class="faq-answer">{{ faq.answer }}</div>
+          </div>
+          {% endfor %}
+        {% else %}
+          <div class="faq-item">
+            <button class="faq-question">Who are your programmes for?<i class="bi bi-chevron-down faq-chevron"></i></button>
+            <div class="faq-answer">Our programmes are designed for students, final-year undergraduates, fresh graduates, NYSC members, early-career professionals (0–5 years experience), job seekers, and organisations seeking staff training and onboarding solutions.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Do I need prior experience to enrol?<i class="bi bi-chevron-down faq-chevron"></i></button>
+            <div class="faq-answer">No prior corporate experience is required. Our foundational programmes start from the basics and progressively build your competence. Intermediate and advanced sessions are also available for those with some experience.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">How are classes delivered?<i class="bi bi-chevron-down faq-chevron"></i></button>
+            <div class="faq-answer">We deliver through virtual (online) sessions, physical workshops and seminars, corporate in-house training, and one-on-one coaching. The format depends on the programme and your preference.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">What are your available schedules?<i class="bi bi-chevron-down faq-chevron"></i></button>
+            <div class="faq-answer">We offer weekday, weekend, and evening sessions to accommodate learners who are studying or working. Customised schedules are available for corporate clients and private coaching engagements.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Do participants receive a certificate?<i class="bi bi-chevron-down faq-chevron"></i></button>
+            <div class="faq-answer">Yes, participants who complete a programme receive a certificate of participation from The ABC Success Lab, a CAC-registered business. Contact us for more details about specific programmes.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">How do I register for a programme?<i class="bi bi-chevron-down faq-chevron"></i></button>
+            <div class="faq-answer">Fill in our online interest/registration form (button at the top of the page) or reach out via WhatsApp on 08101537642. Our team will follow up with programme details, fees, and schedules.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Can organisations book training for their staff?<i class="bi bi-chevron-down faq-chevron"></i></button>
+            <div class="faq-answer">Absolutely. We design and deliver bespoke in-house training and onboarding programmes for organisations of any size. Get in touch with us to discuss your team's specific needs and we'll build a customised solution.</div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">Where are you located?<i class="bi bi-chevron-down faq-chevron"></i></button>
+            <div class="faq-answer">Our principal place of business is at 15, Kola Adesina Close, Egbin Power Plc Estate, Ijede, Lagos State, Nigeria. Many of our programmes are also available fully online.</div>
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+
+    <div class="text-center mt-5">
+      <p style="color:var(--gray-600);">Still have a question?</p>
+      <div class="d-flex flex-wrap gap-3 justify-content-center mt-3">
+        <a href="{% url 'core:contact' %}" class="btn-gold">Contact Us</a>
+        <a href="https://wa.me/2348101537642" target="_blank" rel="noopener"
+           class="btn-outline-white"
+           style="background:var(--navy);color:var(--white);border-color:var(--navy);">
+          <i class="bi bi-whatsapp me-2"></i>WhatsApp
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

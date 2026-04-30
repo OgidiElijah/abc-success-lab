@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Blog & News – The ABC Success Lab{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb-nav mb-3">
+      <a href="{% url 'core:home' %}">Home</a>
+      <span class="sep">/</span>
+      <span>Blog & News</span>
+    </nav>
+    <h1 class="hero-title" style="font-size:clamp(2rem,4vw,3rem);">Insights & News</h1>
+    <p style="color:rgba(255,255,255,.7);max-width:520px;font-size:1.05rem;margin-top:12px;">
+      Career tips, workplace insights, and updates from The ABC Success Lab.
+    </p>
+  </div>
+</section>
+
+<section class="section-pad">
+  <div class="container">
+
+    <!-- Category filter -->
+    {% if categories %}
+    <div class="d-flex flex-wrap gap-2 mb-5">
+      <a href="{% url 'blog:post_list' %}"
+         class="px-4 py-2 rounded-pill {% if not active_category %}btn-gold{% else %}border{% endif %}"
+         style="font-size:.88rem;font-weight:500;{% if not active_category %}{% else %}color:var(--navy);border-color:#e8e4de!important;{% endif %}">
+        All
+      </a>
+      {% for cat in categories %}
+      <a href="{% url 'blog:post_list' %}?category={{ cat.slug }}"
+         class="px-4 py-2 rounded-pill {% if active_category.pk == cat.pk %}btn-gold{% else %}border{% endif %}"
+         style="font-size:.88rem;font-weight:500;{% if active_category.pk != cat.pk %}color:var(--navy);border-color:#e8e4de!important;{% endif %}">
+        {{ cat.name }}
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if posts %}
+    <div class="row g-4">
+      {% for post in posts %}
+      <div class="col-md-6 col-lg-4" data-reveal>
+        <a href="{% url 'blog:post_detail' post.slug %}" class="text-decoration-none">
+          <div class="blog-card">
+            {% if post.cover_image %}
+              <img src="{{ post.cover_image.url }}" alt="{{ post.title }}" class="blog-card-img" style="height:220px;object-fit:cover;width:100%;">
+            {% else %}
+              <div class="blog-card-img"><i class="bi bi-file-text"></i></div>
+            {% endif %}
+            <div class="blog-card-body">
+              {% if post.category %}<div class="blog-category">{{ post.category.name }}</div>{% endif %}
+              <h5>{{ post.title }}</h5>
+              <p>{{ post.excerpt|truncatewords:20 }}</p>
+              <div class="blog-meta d-flex align-items-center gap-2">
+                <i class="bi bi-calendar3"></i>
+                {% if post.published_at %}{{ post.published_at|date:"d M Y" }}{% endif %}
+                {% if post.author %}
+                &middot; <i class="bi bi-person"></i> {{ post.author.get_full_name|default:post.author.username }}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="text-center py-5">
+      <i class="bi bi-newspaper fs-1 text-gold d-block mb-3"></i>
+      <h4 style="color:var(--navy);">No posts published yet</h4>
+      <p style="color:var(--gray-600);">Check back soon — articles and career tips are coming.</p>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+
+{% endblock %}

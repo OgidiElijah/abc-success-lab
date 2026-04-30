@@ -1,0 +1,304 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}The ABC Success Lab – Get Corporate-Ready | Lagos, Nigeria{% endblock %}
+
+{% block content %}
+
+<!-- ── HERO ──────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-pattern"></div>
+  <div class="container py-5">
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-6">
+        <p class="hero-eyebrow fade-up">CAC Registered | Ijede, Lagos</p>
+        <h1 class="hero-title fade-up delay-1">
+          Transform Potential<br>Into <span>Corporate</span><br>Performance
+        </h1>
+        <p class="hero-body fade-up delay-2">
+          We equip individuals with the mindset, practical skills, and professional behaviours
+          needed to integrate, grow, and excel in the corporate world.
+        </p>
+        <div class="d-flex flex-wrap gap-3 fade-up delay-3">
+          <a href="#" target="_blank" rel="noopener" class="btn-gold">
+            <i class="bi bi-pencil-square me-2"></i>Register Interest
+          </a>
+          <a href="{% url 'core:services' %}" class="btn-outline-white">
+            <i class="bi bi-grid me-2"></i>View Programs
+          </a>
+        </div>
+
+        <div class="hero-stats fade-up delay-4">
+          <div>
+            <div class="hero-stat-num">10+</div>
+            <div class="hero-stat-label">Programs</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">3</div>
+            <div class="hero-stat-label">Delivery Modes</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">100%</div>
+            <div class="hero-stat-label">Practical Focus</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5 offset-lg-1 fade-up delay-2">
+        <div class="hero-card">
+          <div class="hero-card-badge">Our Training Covers</div>
+          <div class="program-item"><span class="program-dot"></span>Microsoft Office (Excel, Word, PowerPoint)</div>
+          <div class="program-item"><span class="program-dot"></span>Business Etiquette & Workplace Readiness</div>
+          <div class="program-item"><span class="program-dot"></span>Budgeting & Budget Reporting</div>
+          <div class="program-item"><span class="program-dot"></span>Basic Accounting & Financial Reporting</div>
+          <div class="program-item"><span class="program-dot"></span>Foundational AI for the Workplace</div>
+          <div class="program-item"><span class="program-dot"></span>Career Development & Coaching</div>
+          <div class="program-item"><span class="program-dot"></span>Tax Training & Consultation</div>
+          <div class="mt-4">
+            <a href="#" target="_blank" rel="noopener" class="btn-gold w-100 text-center">
+              Fill Interest Form &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── TARGET AUDIENCE STRIP ─────────────────────────── -->
+<section class="bg-off-white section-pad-sm">
+  <div class="container text-center">
+    <p class="section-label">Who Should Attend</p>
+    <div class="d-flex flex-wrap justify-content-center gap-3 mt-3">
+      {% for audience in audiences %}
+      <span class="px-4 py-2 rounded-pill border border-2"
+            style="border-color:#e8a020!important;color:#0d1b2a;font-weight:500;font-size:.9rem;">
+        {{ audience }}
+      </span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICES PREVIEW ───────────────────────────────── -->
+<section class="section-pad">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6">
+        <p class="section-label">What We Offer</p>
+        <h2 class="section-title">Programs Built for the Real Workplace</h2>
+      </div>
+      <div class="col-lg-6 d-flex align-items-end justify-content-lg-end">
+        <a href="{% url 'core:services' %}" class="btn-gold">View All Services</a>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      {% if services %}
+        {% for service in services %}
+        <div class="col-sm-6 col-lg-4" data-reveal>
+          <div class="service-card">
+            <div class="service-icon"><i class="bi {{ service.icon }}"></i></div>
+            <h5>{{ service.title }}</h5>
+            <p>{{ service.description }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      {% else %}
+        <div class="col-sm-6 col-lg-4" data-reveal>
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-laptop"></i></div>
+            <h5>Microsoft Office Training</h5>
+            <p>Practical, hands-on training designed for the modern Nigerian workplace.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4" data-reveal>
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-chat-dots"></i></div>
+            <h5>Business Communication</h5>
+            <p>Written and verbal communication skills that meet corporate standards.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4" data-reveal>
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-bar-chart"></i></div>
+            <h5>Budgeting & Reporting</h5>
+            <p>Build, track, and report budgets – a core skill across all roles.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4" data-reveal>
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-calculator"></i></div>
+            <h5>Basic Accounting</h5>
+            <p>Foundational accounting principles for non-accountants and entry-level staff.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4" data-reveal>
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-cpu"></i></div>
+            <h5>Workplace AI Productivity</h5>
+            <p>Apply AI tools reshaping how professionals work today.</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4" data-reveal>
+          <div class="service-card">
+            <div class="service-icon"><i class="bi bi-person-lines-fill"></i></div>
+            <h5>Career Coaching</h5>
+            <p>CV, interviews, LinkedIn, and career-path planning for the modern job market.</p>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY CHOOSE US ──────────────────────────────────── -->
+<section class="section-pad bg-off-white">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <div class="col-lg-5">
+        <p class="section-label">Why Choose Us</p>
+        <h2 class="section-title">We Don't Just Train,<br>We <em>Transform</em></h2>
+        <p class="section-sub mt-3">
+          Our curriculum is built around what employers actually need – not theory,
+          but workplace-ready skills you can use from day one.
+        </p>
+        <div class="mt-4">
+          <a href="{% url 'core:about' %}" class="btn-gold">Learn About Us</a>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <div class="approach-item" data-reveal>
+          <div class="approach-num">01</div>
+          <div>
+            <h5 style="color:var(--navy);margin-bottom:6px;">Practical & Hands-On</h5>
+            <p style="color:var(--gray-600);font-size:.93rem;">Real-life scenarios, exercises and role plays – not slides read aloud.</p>
+          </div>
+        </div>
+        <div class="approach-item" data-reveal>
+          <div class="approach-num">02</div>
+          <div>
+            <h5 style="color:var(--navy);margin-bottom:6px;">Flexible Schedules</h5>
+            <p style="color:var(--gray-600);font-size:.93rem;">Weekend, evening, and customised learning to fit around your life.</p>
+          </div>
+        </div>
+        <div class="approach-item" data-reveal>
+          <div class="approach-num">03</div>
+          <div>
+            <h5 style="color:var(--navy);margin-bottom:6px;">Industry-Relevant Curriculum</h5>
+            <p style="color:var(--gray-600);font-size:.93rem;">Designed by practitioners who understand Nigerian corporate expectations.</p>
+          </div>
+        </div>
+        <div class="approach-item" data-reveal>
+          <div class="approach-num">04</div>
+          <div>
+            <h5 style="color:var(--navy);margin-bottom:6px;">Result-Driven Focus</h5>
+            <p style="color:var(--gray-600);font-size:.93rem;">Measurable improvement tracked throughout every programme.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS PREVIEW ───────────────────────────── -->
+{% if testimonials %}
+<section class="section-pad">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">Testimonials</p>
+      <h2 class="section-title">What Participants Say</h2>
+    </div>
+    <div class="row g-4">
+      {% for t in testimonials %}
+      <div class="col-md-6 col-lg-4" data-reveal>
+        <div class="testimonial-card">
+          <p style="color:var(--gray-600);font-size:.93rem;margin-top:30px;margin-bottom:24px;">{{ t.message }}</p>
+          <div class="d-flex align-items-center gap-3">
+            <div class="testimonial-avatar">
+              {% if t.photo %}<img src="{{ t.photo.url }}" alt="{{ t.name }}">
+              {% else %}{{ t.name|first }}{% endif %}
+            </div>
+            <div>
+              <strong style="color:var(--navy);font-size:.92rem;">{{ t.name }}</strong>
+              {% if t.title %}<div style="font-size:.8rem;color:var(--gray-400);">{{ t.title }}</div>{% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="text-center mt-5">
+      <a href="{% url 'core:testimonials' %}" class="btn-gold">Read All Testimonials</a>
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ── LATEST BLOG POSTS ───────────────────────────────── -->
+{% if latest_posts %}
+<section class="section-pad bg-off-white">
+  <div class="container">
+    <div class="row mb-5 align-items-end">
+      <div class="col-lg-7">
+        <p class="section-label">Blog & News</p>
+        <h2 class="section-title">Insights for the Modern Professional</h2>
+      </div>
+      <div class="col-lg-5 text-lg-end">
+        <a href="{% url 'blog:post_list' %}" class="btn-gold">All Articles</a>
+      </div>
+    </div>
+    <div class="row g-4">
+      {% for post in latest_posts %}
+      <div class="col-md-4" data-reveal>
+        <a href="{% url 'blog:post_detail' post.slug %}" class="text-decoration-none">
+          <div class="blog-card">
+            {% if post.cover_image %}
+              <img src="{{ post.cover_image.url }}" alt="{{ post.title }}" class="blog-card-img">
+            {% else %}
+              <div class="blog-card-img"><i class="bi bi-file-text"></i></div>
+            {% endif %}
+            <div class="blog-card-body">
+              {% if post.category %}<div class="blog-category">{{ post.category.name }}</div>{% endif %}
+              <h5>{{ post.title }}</h5>
+              <p>{{ post.excerpt|truncatewords:18 }}</p>
+              <div class="blog-meta">
+                {% if post.published_at %}{{ post.published_at|date:"d M Y" }}{% endif %}
+                {% if post.author %} &middot; {{ post.author.get_full_name|default:post.author.username }}{% endif %}
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<!-- ── CTA BANNER ─────────────────────────────────────── -->
+<section class="cta-banner section-pad">
+  <div class="container text-center position-relative" style="z-index:1;">
+    <p class="section-label">Ready to Start?</p>
+    <h2 class="section-title light mb-3">Get Corporate-Ready.<br>Stand Out. Succeed.</h2>
+    <p style="color:rgba(255,255,255,.7);max-width:520px;margin:0 auto 36px;font-size:1.05rem;">
+      Join professionals who have taken the step to invest in their career.
+      Fill in our interest form and we'll reach out with the details that matter to you.
+    </p>
+    <div class="d-flex flex-wrap gap-3 justify-content-center">
+      <a href="#" target="_blank" rel="noopener" class="btn-gold">
+        <i class="bi bi-pencil-square me-2"></i>Fill Interest Form
+      </a>
+      <a href="https://wa.me/2348101537642" target="_blank" rel="noopener" class="btn-outline-white">
+        <i class="bi bi-whatsapp me-2"></i>Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
